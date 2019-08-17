@@ -1,5 +1,6 @@
 # MySQL
 Руководство по MySQL
+http://mysql.itgid.info/
 
 ## Импорт каталога в PHPMyAdmin
 * Заходим в PHPMyAdmin
