@@ -38,4 +38,4 @@ http://mysql.itgid.info/
     код
     као
 
-абза
+абз
