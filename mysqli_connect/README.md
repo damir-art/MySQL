@@ -6,36 +6,44 @@ https://www.w3schools.com/php/php_mysql_select.asp
 
     <?php
     /*
-    Файл настроек базы данных.
-    Подключаемся к базе, вместо переменных создаём константы.
-    Константы доступны везде, где подключен файл config.php
-    \*/
+        Файл настроек базы данных.
+        Подключаемся к базе, вместо переменных создаём константы.
+        Константы доступны везде, где подключен файл config.php
+    */
     define('SERVERNAME', 'localhost'); // имя сервера
     define('USERNAME', 'root');        // логин пользователя базы
     define('PASSWORD', '');            // пароль пользователя базы
     define('DBNAME', 'c2');            // имя базы
 
+    require_once 'config.php';
+
     // Создаем соединение
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    // $conn - ссылка на соединение с базой данных (ссылка на ресурс)
+    $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DBNAME);
 
-    // Проверяем соединение
-    if ($conn->connect_error) {
-        die("Ошибка подключения: " . $conn->connect_error);
+    mysqli_set_charset($conn, 'utf8'); // Принудительно  ставим кодировку если возникают крякозябры
+
+    if (!$conn) {
+        die('Ошибка подключения: ' . mysqli_connect_error());
+    } else {
+        echo '<h3>Подключились к базе!</h3>';
     }
-    echo "<p>Подключение в БД удалось</p>";
 
-    // Создаём SQL-запрос
-    $sql = "SELECT id, name, description, cost FROM goods";
-    $result = $conn->query($sql);
+    $sql = 'SELECT name, description FROM goods';
+    $result = mysqli_query($conn, $sql);
 
-    if ($result->num_rows > 0) {
-        // выходные данные каждой строки
-        while($row = $result->fetch_assoc()) {
-            echo "<p>" . $row["id"]. " " . $row["name"]. " " . $row["description"] . " " . $row["cost"] . "</p>";
+    // $a = array();
+
+    if (mysqli_num_rows($result) > 0) {
+        // row - это строка таблицы
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row['name'] . ' ' . $row['description'] . '<br />';
+            // $a[] = $row;
         }
     } else {
-        echo "В таблице нет данных";
+        echo "В таблице нет данных!";
     }
 
-    // Закрываем соединение
-    $conn->close();
+    // pre_var($a);
+
+    mysqli_close($conn);
