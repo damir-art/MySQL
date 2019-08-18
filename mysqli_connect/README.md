@@ -15,6 +15,8 @@ https://www.w3schools.com/php/php_mysql_select.asp
     define('PASSWORD', '');            // пароль пользователя базы
     define('DBNAME', 'c2');            // имя базы
 
+Создаём файл index.php размещаем там код:
+
     require_once 'config.php';
 
     // Создаем соединение
