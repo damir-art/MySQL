@@ -1,6 +1,5 @@
 # MySQL
 Руководство по MySQL
-http://mysql.itgid.info/
 
 ## Импорт каталога в PHPMyAdmin
 * Заходим в PHPMyAdmin
@@ -39,3 +38,8 @@ http://mysql.itgid.info/
 
 ### Разное
 * MD5 - функция хэша которая генерирует 32-х символьную строку из любого пароля (16-тиричная система счисления)
+
+### Ссылки
+https://www.youtube.com/channel/UCvqXOuAHAc76rtZVVE4qfJw
+http://mysql.itgid.info/
+https://shultais.education/
