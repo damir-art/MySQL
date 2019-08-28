@@ -29,7 +29,8 @@
     * pass (md5, ivan123) вперёд, вкладка "Обзор"
 
 Файл `login.php`, код обработки формы, сама форма
-
+    
+    код
 
 ### Как удалить таблицу
 * В PHPMyAdmin слева выбираем таблицу
@@ -40,6 +41,6 @@
 * MD5 - функция хэша которая генерирует 32-х символьную строку из любого пароля (16-тиричная система счисления)
 
 ### Ссылки
-https://www.youtube.com/channel/UCvqXOuAHAc76rtZVVE4qfJw
-http://mysql.itgid.info/
-https://shultais.education/
+https://www.youtube.com/channel/UCvqXOuAHAc76rtZVVE4qfJw<br />
+http://mysql.itgid.info/<br />
+https://shultais.education/<br />
